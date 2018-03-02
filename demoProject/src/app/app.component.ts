@@ -11,13 +11,15 @@ import { InteractionsService } from './components/interactions/interactions.serv
   providers: [InteractionsService]
 })
 export class AppComponent implements OnInit, AfterViewInit {
-  //#region Components
+  //#region Template & binding
   // Two-way bindings 1
   prop = 1;
 
   // Two-way bindings 2
   fontSizePx = 10;
+  //#endregion
 
+  //#region Components
   // Life cycle hooks
   id = 1;
   label = "test";

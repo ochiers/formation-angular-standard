@@ -5,10 +5,12 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
 // import { AppRoutingModule }   from './app-routing.module';
 
-// Training
-// Components
 import { AppComponent } from './app.component';
-import { SizerComponent } from './components/binding/sizer.component';
+
+// Template & Bindings
+import { SizerComponent } from './binding/sizer.component';
+
+// Components
 import { HooksComponent } from './components/hooks/hooks.component';
 import { InteractionsComponent } from './components/interactions/interactions.component';
 
