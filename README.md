@@ -9,20 +9,19 @@ Architectes, Leads Tech, Développeurs et Chefs de projets web
 Connaissance générale des principes du web. Connaissances basiques de l’HTML et du Javascript. 
 
 ## Durée
-3/4 jours.
+3 jours.
 
 ## Formule standard (3 jours)
 #### Jour 1
-* Présentation générale ES6/ES7
+* ECMAScript: Présentation générale CommonJS/ES6/ES7
 * TypeScript: configurer, utiliser et compiler
 * NodeJS, NPM et les Node modules
-* Ecosystème de développement et installation du kit
-#### Jour 2
 * Angular CLI: scaffolder, configurer et lancer
 * Architecture générale
+#### Jour 2
 * Templating et data-binding
 * Components et leurs interactions
-* Directives et Pipes
+* Directives et Pipesdis e
 * Formulaires et validation
 * Services et Injection de Dépendances
 * Requêtes HTTP

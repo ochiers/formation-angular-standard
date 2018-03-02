@@ -8,38 +8,38 @@ import { RouterModule, Routes } from '@angular/router';
 // Training
 // Components
 import { AppComponent } from './app.component';
-import { SizerComponent } from './training/components/binding/sizer.component';
-import { HooksComponent } from './training/components/hooks/hooks.component';
-import { InteractionsComponent } from './training/components/interactions/interactions.component';
+import { SizerComponent } from './components/binding/sizer.component';
+import { HooksComponent } from './components/hooks/hooks.component';
+import { InteractionsComponent } from './components/interactions/interactions.component';
 
 // Directives
-import { HighlightDirective } from './training/directives/highlight.directive';
-import { InputMaxLengthDirective } from './training/directives/input-max-length.directive';
+import { HighlightDirective } from './directives/highlight.directive';
+import { InputMaxLengthDirective } from './directives/input-max-length.directive';
 
 // Pipes
-import { ExponentialPipe } from './training/pipes/exponential.pipe';
+import { ExponentialPipe } from './pipes/exponential.pipe';
 
 // Forms
-import { DemoFormComponent } from './training/forms/demo-form.component';
-import { DemoReactFormComponent } from './training/forms/demo-react-form.component';
-import { ForbiddenValidatorDirective } from './training/forms/forbidden-validator.directive';
-import { DemosComponent } from './training/di/demos.component';
+import { DemoFormComponent } from './forms/demo-form.component';
+import { DemoReactFormComponent } from './forms/demo-react-form.component';
+import { ForbiddenValidatorDirective } from './forms/forbidden-validator.directive';
+import { DemosComponent } from './di/demos.component';
 
 // Services
-import { DemoService } from './training/di/demo.service';
-import { Logger } from './training/di/logger.service';
+import { DemoService } from './di/demo.service';
+import { Logger } from './di/logger.service';
 
 // Http
-import { DemoInterceptor } from './training/http/demo.interceptor';
+import { DemoInterceptor } from './http/demo.interceptor';
 
 // Navigation
-import { DemoComponent } from './training/navigation/demo.component';
-import { DemoDetailComponent } from './training/navigation/demo-detail.component';
-import { DemoViewComponent } from './training/navigation/demo-view.component';
-import { DemoEditComponent } from './training/navigation/demo-edit.component';
-import { PageNotFoundComponent } from './training/navigation/page-not-found.component';
-import { AuthGuard } from './training/navigation/auth-guard';
-import { SaveFormsGuard } from './training/navigation/save-forms-guard';
+import { DemoComponent } from './navigation/demo.component';
+import { DemoDetailComponent } from './navigation/demo-detail.component';
+import { DemoViewComponent } from './navigation/demo-view.component';
+import { DemoEditComponent } from './navigation/demo-edit.component';
+import { PageNotFoundComponent } from './navigation/page-not-found.component';
+import { AuthGuard } from './navigation/auth-guard';
+import { SaveFormsGuard } from './navigation/save-forms-guard';
 const appRoutes: Routes = [
   {
     path: 'demo',
@@ -59,7 +59,7 @@ const appRoutes: Routes = [
   },
   {
     path: 'demo-from-custom-module',
-    loadChildren: './training/modules/demo/demo.module#DemoModule', // Lazy load
+    loadChildren: './modules/demo/demo.module#DemoModule', // Lazy load
   },
   {
     path: '',

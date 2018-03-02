@@ -1,8 +1,8 @@
 import { Component, ViewChild, OnInit, AfterViewInit } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 
-import { InteractionsComponent } from './training/components/interactions/interactions.component';
-import { InteractionsService } from './training/components/interactions/interactions.service';
+import { InteractionsComponent } from './components/interactions/interactions.component';
+import { InteractionsService } from './components/interactions/interactions.service';
 
 @Component({
   selector: 'app-root',
@@ -85,7 +85,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   //#endregion
 
   //#region HttpClient
-  ngOnInit(){}
+  ngOnInit() { }
   // results: string[];
   // ngOnInit(): void {
   //   // Récupération de données JSON
