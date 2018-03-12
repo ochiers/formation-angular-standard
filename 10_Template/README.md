@@ -1,5 +1,7 @@
 # Affichage des données
+
 ### Constructeur / variables d'initalisation ?
+
 ```typescript
 export class DemoComponent {
   title: string = "toto";
@@ -9,7 +11,9 @@ export class DemoComponent {
   }
 }
 ```
+
 ### Modèle de données
+
 ```typescript
 export class Demo {
   constructor(
@@ -23,35 +27,44 @@ demos: Demo[] = [
   new Hero(3, 'C')
 ];
 ```
+
 ```html
 <li *ngFor="let demo of demos"> {{ hero }}</li>
 ```
+
 ### Interpolation
+
 ```html
 {{ demo }}
 <p>La somme de 1 + 1 est {{1 + 1}}</p>
 ```
+
 ### Expressions
+
 ```html
 <div [prop]="expression"></div>
 ```
 
 ### Contexte d'expressions --> scope du Component
+
 ```html
 <div [hidden]="demos.length > 3"></div>
 ```
 
 ### Statements
+
 ```html
 <button (click)="deleteDemo()">Delete demo</button>
 ```
 
 ### Bindings
+
 * One-way : to-the-dom   --> {{expression}}, [target]="expression"
 * One-way : from-the-dom --> (target)="statement"
 * Two-way : both         --> [(target)]="expression"
 
 ### Binding targets
+
 Target  | Target  | Exemples
 ---     |---      | ---
 Property| DOM property| <img [src]="imgUrl">
@@ -66,4 +79,5 @@ Class | class property | <div [class.active]="isActive">Active</div>
 Style | style property | <button [style.color]="isActive ? 'red' : 'green'">
 
 ### Two-way binding
+
 Voir l'exemple
