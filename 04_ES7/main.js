@@ -13,6 +13,8 @@ console.log(pets.includes('at'));
 // expected output: false
 //#endregion
 
+
+//-----------------------------------------
 //#region Exponentiation operator
 let result = 3 ** 4;
 console.log(result); //81

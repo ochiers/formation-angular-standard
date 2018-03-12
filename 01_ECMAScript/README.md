@@ -78,7 +78,23 @@ Version  | Navigateur
 ## ES6 <=> ES2015
 * Pour satisfaire les utilisateurs de CommonJS et AMD
 * Similaire à CommonJS, avec une syntaxe compacte, une préférence pour les exportations uniques
-* Similaire à AMD, ils supportent directement le chargement asynchrone et le chargement de modules configurables
-* La norme du module ES6 comporte deux parties:
-    - Syntaxe déclarative (pour l'importation et l'exportation)
-    - API du chargeur programmatique: pour configurer le chargement et le chargement conditionnel des modules
+* Similaire à AMD, ils supportent directement le chargement asynchrone
+
+## Module loaders & Module bundlers
+
+### Module loaders
+* Généralement une bibliothèque qui peut charger, interpréter et exécuter des modules JavaScript avec syntaxe AMD ou CommonJS.
+* Dans une application avec plusieurs modules, il peut être assez pénible de s'assurer que tous les fichiers sont inclus et dans le bon ordre. 
+* Un Module loader s'occupera de la gestion des dépendances en s'assurant que tous les modules sont chargés lors de l'exécution de l'application. 
+* Les Module loaders les plus populaires sont RequireJS et SystemJS.
+
+### Module bundlers
+* Une alternative aux Module loaders.
+* Fondamentalement, ils font la même chose (gérer et charger des modules interdépendants), mais pendant la construction de l'application avant l'exécution.
+* Au lieu de charger les dépendances telles qu'elles définient dans le code, un bundler assemble tous les modules en un seul fichier (un bundle) avant l'exécution. 
+* Les Module loaders les plus populaires sont Webpack et Browserify.
+
+### Quand utiliser quoi?
+* Le choix dépend de la structure et de la taille de l'application
+* Un bundler génère beaucoup moins de fichiers que le navigateur doit télécharger --> peut réduire le temps de chargement. 
+* Un loader peut fournir de meilleures performances, car le chargement d'un gros fichier monolithique peut également bloquer le démarrage de l'application.

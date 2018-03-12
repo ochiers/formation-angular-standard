@@ -1,5 +1,3 @@
-https://nodejs.org/en/
-
 # Node.js
 * Environnement d’exécution JavaScript construit sur le moteur JavaScript V8 de Chrome
 * Pas un framework web
@@ -24,7 +22,7 @@ console.log(content);
 // Code non bloquant -> asynchrone
 // Lorsque le fichier sera lu, le code de la fonction passée en parametre sera exécuté
 // Si il y a du code apres cette instruction, node.js pourra l'executer en attendant d'avoir les informations sur le fichier en cours de lecture
-// Un disque dur faible --> exécution plus rapidement
+// Un disque dur faible --> exécution plus rapide
 fs.readFile('file.txt', (err, content) => {
     if(err) {
         throw err;
@@ -44,7 +42,6 @@ fs.readFile('file.txt', (err, content) => {
 * Deux champs sont obligatoires: "name" et "version"
 * Spécifie les versions des differents packages
 * Facilite le partage avec d'autres dev
-* npm-update pour mettre à jour
 ### 2 types de dépendances
 * "dependencies": requis par le projet en production
 * "devDependencies": requis uniquement en dev et test
@@ -73,8 +70,7 @@ Dossier contenant un programme décrit par un fichier package.json
 * 3eme compteur: bug fix, patch
 
 ### Pour consommer
-Si on commence avec un package version 1.0.4,
-Voici comment spécifierier les changements de versions:
+Si on commence avec un package version 1.0.4 :
 * Patch  : 1.0 ou 1.0.x ou ~1.0.4
 * Mineur : 1 ou 1.x ou ^1.0.4
 * Majeur : * ou x
