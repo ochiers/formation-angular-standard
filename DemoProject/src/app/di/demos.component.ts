@@ -7,11 +7,11 @@ import { Demo } from './demo';
 @Component({
   selector: 'demos-di',
   templateUrl: './demos.component.html',
-  providers: [ DemoService ]
+  providers: [DemoService]
 })
 export class DemosComponent {
   demos: Demo[];
   constructor(demoService: DemoService) {
     this.demos = demoService.getDemos();
   }
- }
+}

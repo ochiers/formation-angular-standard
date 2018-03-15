@@ -101,10 +101,7 @@ const appRoutes: Routes = [
     ReactiveFormsModule,
     HttpClientModule,
     // AppRoutingModule
-    RouterModule.forRoot(
-      appRoutes,
-      { enableTracing: true } // <-- pour le debugage
-    )
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [
     DemoService,

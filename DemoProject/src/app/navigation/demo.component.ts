@@ -41,16 +41,15 @@ export class DemoComponent implements OnInit, OnDestroy {
     { id: 6, code: 'F', label: 'FFFF' },
   ];
 
-  constructor(private router: Router,
-    private route: ActivatedRoute) {
-    console.log(this.route);
-    console.log(this.router.routerState);
-  }
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute
+  ) { }
 
   ngOnInit() {
     this.subscription = this.route.queryParams.subscribe(params => {
-        this.lastIdedited = +params['id'] || 0; // 0 si pas de query param
-      });
+      this.lastIdedited = +params['id'] || 0; // 0 si pas de query param
+    });
   }
 
   ngOnDestroy() {

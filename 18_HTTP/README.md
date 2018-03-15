@@ -5,10 +5,10 @@
     - l'API fetch()              --> https://developer.mozilla.org/fr/docs/Web/API/Fetch_API/Using_Fetch
 ## HttpClient
 * HttpClient d'Angular fournit une API pour la fonctionnalité HTTP, en s'appuyant sur l'interface XMLHttpRequest des navigateurs
-* Les avantages HttpClient: 
+* Les avantages de HttpClient: 
     - Le typage fort des objets de requête et de réponse, 
     - Le support des intercepteurs de requêtes et de réponses 
-    - Meilleure gestion des erreurs via les API basés sur Observables.
+    - Meilleure gestion des erreurs via les API basés sur les Observables.
 ```typescript
 import {HttpClientModule} from '@angular/common/http';
 
@@ -43,11 +43,8 @@ import {HTTP_INTERCEPTORS} from '@angular/common/http';
 export class AppModule {}
 ```
 * L'option multi: true, indique à Angular que HTTP_INTERCEPTORS est un tableau de valeurs, plutôt qu'une seule valeur
-* L'Observable renvoyé par interception n'est pas un Observable de HttpResponse mais un HttpEvent
-* Parce que les intercepteurs fonctionnent à un niveau inférieur à celui de l'interface HttpClient
-* Une seule requête peut générer plusieurs événements (événements de progression de téléchargement par exemple) 
 * Si plusieurs intercepteurs sont enregistrés, Angular les applique dans l'ordre d'enrgistrement. 
-* Les intercepteurs transforment les requêtes et les réponses mais les classes qui les representent HttpRequest et HttpResponse sont immuables.
+* Les intercepteurs transforment les requêtes et les réponses mais les classes qui les représentent HttpRequest et HttpResponse sont immuables.
 * L'immutabilité garantit que les intercepteurs voient la même demande à chaque essai.
 * Dans le cas où le corps de la requête doit être modifié, il faut cloner la requête, puis faire muter la copie
 ```typescript
