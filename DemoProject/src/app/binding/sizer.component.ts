@@ -3,11 +3,12 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 @Component({
   selector: 'sizer',
   template: `
- <div>
-   <button (click)="dec()" title="smaller">-</button>
-   <button (click)="inc()" title="bigger">+</button>
-   <label [style.font-size.px]="size">FontSize: {{size}}px</label>
- </div>`
+    <div>
+      <button (click)="dec()" title="smaller">-</button>
+      <button (click)="inc()" title="bigger">+</button>
+      <label [style.font-size.px]="size">FontSize: {{size}}px</label>
+    </div>
+ `
 })
 export class SizerComponent {
   @Input() size: number | string;

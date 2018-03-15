@@ -22,12 +22,13 @@ import { InputMaxLengthDirective } from './directives/input-max-length.directive
 import { ExponentialPipe } from './pipes/exponential.pipe';
 
 // Forms
-import { DemoFormComponent } from './forms/demo-form.component';
-import { DemoReactFormComponent } from './forms/demo-react-form.component';
+import { TemplateDrivenFormComponent } from './forms/template-driven-form.component';
+import { ReactiveFormComponent } from './forms/reactive-form.component';
 import { ForbiddenValidatorDirective } from './forms/forbidden-validator.directive';
-import { DemosComponent } from './di/demos.component';
+
 
 // Services
+import { DemosComponent } from './di/demos.component';
 import { DemoService } from './di/demo.service';
 import { Logger } from './di/logger.service';
 
@@ -84,8 +85,8 @@ const appRoutes: Routes = [
     HighlightDirective,
     InputMaxLengthDirective,
     ExponentialPipe,
-    DemoFormComponent,
-    DemoReactFormComponent,
+    TemplateDrivenFormComponent,
+    ReactiveFormComponent,
     ForbiddenValidatorDirective,
     DemosComponent,
     DemoComponent,

@@ -4,7 +4,13 @@ import { Subject } from 'rxjs/Subject';
 @Injectable()
 export class InteractionsService {
 
-    // Observable string sources
+    // Observable: 
+    // * Data producer alone
+    // * Simple Observable with only one Obeserver
+    // Subject: 
+    // * Special type of Observable
+    // * Multiple observers listen to data 
+    // * Proxy between Observable  and  Observer
     private broadcastParentSource = new Subject<string>();
     private broadcastChildSource = new Subject<string>();
 

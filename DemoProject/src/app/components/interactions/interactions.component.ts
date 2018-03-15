@@ -24,12 +24,12 @@ import { Subscription } from 'rxjs/Subscription';
 export class InteractionsComponent implements OnChanges, OnDestroy {
   @Input() ex: number;
 
-  //#region 01
+  //#region Ex 01
   @Input() code: string;
   @Input('label') name: string;
   //#endregion
 
-  //#region 02
+  //#region Ex 02
   private _prop = '';
   @Input()
   set prop(data: string) {
@@ -38,7 +38,7 @@ export class InteractionsComponent implements OnChanges, OnDestroy {
   get prop(): string { return this._prop; }
   //#endregion
 
-  //#region 03
+  //#region Ex 03
   ngOnChanges(changes: SimpleChanges) {
     console.log('---> OnChanges fires');
     for (let propName in changes) {
@@ -50,26 +50,24 @@ export class InteractionsComponent implements OnChanges, OnDestroy {
   }
   //#endregion
 
-  //#region 04
+  //#region Ex 04
   @Output() onAccept = new EventEmitter<boolean>();
   accept(accept: boolean) {
     this.onAccept.emit(accept);
   }
   //#endregion
 
-  //#region 05
+  //#region Ex 05, 06
   hello = "Hello World";
   //#endregion
 
-  //#region 07
+  //#region Ex 07
   dataFromParent = "";
   dataFromChild = "data from child";
   subscription: Subscription;
   constructor(private interService: InteractionsService) {
     this.subscription = interService.broadcastParentStream$.subscribe(
-      dataFromParent => {
-        this.dataFromParent = dataFromParent;
-      });
+      dataFromParent => this.dataFromParent = dataFromParent);
   }
   broadcastChild() {
     this.interService.broadcastChild(this.dataFromChild);

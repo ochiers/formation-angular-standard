@@ -1,11 +1,14 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from "@angular/router";
 
+// Components
 import { DemoComponent } from './navigation/demo.component';
 import { DemoDetailComponent } from './navigation/demo-detail.component';
 import { DemoViewComponent } from './navigation/demo-view.component';
 import { DemoEditComponent } from './navigation/demo-edit.component';
 import { PageNotFoundComponent } from './navigation/page-not-found.component';
+
+// Guards
 import { AuthGuard } from './navigation/auth-guard';
 import { SaveFormsGuard } from './navigation/save-forms-guard';
 

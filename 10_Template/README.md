@@ -1,6 +1,6 @@
 # Affichage des données
 
-### Constructeur / variables d'initalisation ?
+## Constructeur / variables d'initalisation ?
 
 ```typescript
 export class DemoComponent {
@@ -12,7 +12,7 @@ export class DemoComponent {
 }
 ```
 
-### Modèle de données
+## Modèle de données
 
 ```typescript
 export class Demo {
@@ -22,36 +22,36 @@ export class Demo {
   ) { }
 }
 demos: Demo[] = [
-  new Hero(1, 'A'),
-  new Hero(2, 'B'),
-  new Hero(3, 'C')
+  new Demo(1, 'A'),
+  new Demo(2, 'B'),
+  new Demo(3, 'C')
 ];
 ```
 
 ```html
-<li *ngFor="let demo of demos"> {{ hero }}</li>
+<li *ngFor="let demo of demos"> {{ demo }}</li>
 ```
 
-### Interpolation
+## Interpolation
 
 ```html
 {{ demo }}
 <p>La somme de 1 + 1 est {{1 + 1}}</p>
 ```
 
-### Expressions
+## Expressions
 
 ```html
 <div [prop]="expression"></div>
 ```
 
-### Contexte d'expressions --> scope du Component
+## Contexte d'expressions --> scope du Component
 
 ```html
 <div [hidden]="demos.length > 3"></div>
 ```
 
-### Statements
+## Statements
 
 ```html
 <button (click)="deleteDemo()">Delete demo</button>

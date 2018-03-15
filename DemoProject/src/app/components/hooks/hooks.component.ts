@@ -28,7 +28,7 @@ export class HooksComponent implements OnChanges, OnInit, AfterViewInit, OnDestr
   constructor(private renderer: Renderer) { }
 
   ngOnChanges(changes: SimpleChanges) {
-    console.log('---> OnChanges fires');
+    console.log('---> OnChanges fires <---');
     for (let propName in changes) {
       let chng = changes[propName];
       let cur = JSON.stringify(chng.currentValue);
@@ -38,32 +38,23 @@ export class HooksComponent implements OnChanges, OnInit, AfterViewInit, OnDestr
   }
 
   ngOnInit() {
-    console.log('---> OnInit fires');
+    console.log('---> OnInit fires <---');
   }
 
   ngDoCheck() {
-    console.log('---> AfterContentInit fires');
-  }
-
-  ngAfterContentInit() {
-    console.log('---> AfterContentInit fires');
-  }
-
-  ngAfterContentChecked() {
-    console.log('---> AfterContentChecked fires');
+    console.log('---> DoCheck fires <---');
   }
 
   ngAfterViewInit() {
-    console.log('---> AfterViewInit fires');
+    console.log('---> AfterViewInit fires <---');
     this.renderer.invokeElementMethod(this.input.nativeElement, 'focus');
   }
 
   ngAfterViewChecked() {
-    console.log('---> AfterViewChecked fires');
+    console.log('---> AfterViewChecked fires <---');
   }
 
   ngOnDestroy() {
-    console.log('---> OnDestroy fires');
+    console.log('---> OnDestroy fires <---');
   }
-
 }

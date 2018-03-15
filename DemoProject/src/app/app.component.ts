@@ -4,6 +4,13 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { InteractionsComponent } from './components/interactions/interactions.component';
 import { InteractionsService } from './components/interactions/interactions.service';
 
+export class Demo {
+  constructor(
+    public id: number,
+    public label: string
+  ) { }
+}
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -11,7 +18,16 @@ import { InteractionsService } from './components/interactions/interactions.serv
   providers: [InteractionsService]
 })
 export class AppComponent implements OnInit, AfterViewInit {
-  //#region Template & binding
+  //#region Template
+  demos: Demo[] = [
+    new Demo(1, 'A'),
+    new Demo(2, 'B'),
+    new Demo(3, 'C')
+  ];
+  tempTest() { alert('toto'); }
+  //#endregion
+
+  //#region Binding
   // Two-way bindings 1
   prop = 1;
 
@@ -25,32 +41,31 @@ export class AppComponent implements OnInit, AfterViewInit {
   label = "test";
 
   // Interactions
-  interEx = 3;
+  interEx = 6;
+  // Ex 01
   interCode = "A";
   interLabel = "test";
-  interSetter = "    qsdsdqsd";
+  // Ex 02
+  interSetter = "    test";
+  // Ex 03
   interAccept = "";
   interOnAccept = (accept: boolean): void => {
     this.interAccept = accept ? "Oui" : "Non";
   }
-  @ViewChild(InteractionsComponent)
-  private interactionsComponent: InteractionsComponent;
-  interViewChild = "";
+  // Ex 06
+  interViewChild: string;
+  @ViewChild(InteractionsComponent) ic: InteractionsComponent;
   ngAfterViewInit() {
-    if (this.interactionsComponent) {
-      this.interViewChild = this.interactionsComponent.hello;
-    }
+    this.interViewChild = this.ic.hello;
   }
-
+  // Ex 07
   dataFromParent = "data from parent";
   dataFromChild = "";
   constructor(
     private http: HttpClient,
     private interService: InteractionsService) {
     interService.broadcastChildStream$.subscribe(
-      dataFromChild => {
-        this.dataFromChild = dataFromChild;
-      }
+      dataFromChild => this.dataFromChild = dataFromChild
     );
   }
   broadcastParent() {
@@ -69,21 +84,6 @@ export class AppComponent implements OnInit, AfterViewInit {
   dateAnniv = new Date(1988, 1, 12);
   dateFormat = "MM/dd/yy";
   exponent = "";
-  //#endregion
-
-  //#region Forms
-  onKey(event: any) {
-    console.log(event.target.value);
-  }
-  onKeyWithType(event: KeyboardEvent) {
-    console.log((<HTMLInputElement>event.target).value);
-  }
-  onKeyWithRef(value: string) {
-    console.log(value);
-  }
-  onEnter(value: string) {
-    console.log(value);
-  }
   //#endregion
 
   //#region HttpClient
