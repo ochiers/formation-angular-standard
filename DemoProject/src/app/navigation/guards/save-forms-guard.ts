@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { CanDeactivate } from '@angular/router';
 
-import { DemoEditComponent } from './demo-edit.component';
+import { DemoEditComponent } from './../demo/demo-edit.component';
 
 @Injectable()
 export class SaveFormsGuard implements CanDeactivate<DemoEditComponent> {

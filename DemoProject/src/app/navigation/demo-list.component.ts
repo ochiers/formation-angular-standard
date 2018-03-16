@@ -2,7 +2,6 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
 import { Demo } from './demo';
-import { OnChanges } from '@angular/core/src/metadata/lifecycle_hooks';
 
 @Component({
   template: `
@@ -28,7 +27,7 @@ import { OnChanges } from '@angular/core/src/metadata/lifecycle_hooks';
     <p>Dernier Demo modifié: {{ lastIdedited }}</p>
 `,
 })
-export class DemoComponent implements OnInit, OnDestroy {
+export class DemoListComponent implements OnInit, OnDestroy {
   subscription: any;
   lastIdedited: number;
 

@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
-import { Demo } from './demo';
+import { Demo } from './../demo';
 
 @Component({
   template: `
@@ -39,15 +39,15 @@ export class DemoViewComponent {
     { id: 6, code: 'F', label: 'FFFF' },
   ];
 
-  constructor(private router: Router, 
+  constructor(private router: Router,
     private route: ActivatedRoute) {
   }
 
   ngOnInit() {
     this.subscription = this.route.params.subscribe(params => {
-        this.demo = this.demos.filter((el: Demo) => {
-          return el.id ===  +params['id'];
-        })[0];
+      this.demo = this.demos.filter((el: Demo) => {
+        return el.id === +params['id'];
+      })[0];
     });
   }
 

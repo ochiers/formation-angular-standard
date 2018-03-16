@@ -2,27 +2,26 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from "@angular/router";
 
 // Components
-import { DemoComponent } from './navigation/demo.component';
-import { DemoDetailComponent } from './navigation/demo-detail.component';
-import { DemoViewComponent } from './navigation/demo-view.component';
-import { DemoEditComponent } from './navigation/demo-edit.component';
+import { DemoListComponent } from './navigation/demo-list.component';
+import { DemoDetailComponent } from './navigation/demo/demo-detail.component';
+import { DemoViewComponent } from './navigation/demo/demo-view.component';
+import { DemoEditComponent } from './navigation/demo/demo-edit.component';
 import { PageNotFoundComponent } from './navigation/page-not-found.component';
 
 // Guards
-import { AuthGuard } from './navigation/auth-guard';
-import { SaveFormsGuard } from './navigation/save-forms-guard';
+import { DemoGuard } from './navigation/guards/demo-guard';
+import { SaveFormsGuard } from './navigation/guards/save-forms-guard';
 
 const appRoutes: Routes = [
   {
-    path: 'demo',
-    component: DemoComponent,
-    canActivate: [AuthGuard],
-    data: { title: 'Demo List' }
+    path: 'demo-list',
+    component: DemoListComponent,
+    canActivate: [DemoGuard]
   },
   {
     path: 'demo-detail',
     component: DemoDetailComponent,
-    canActivateChild: [AuthGuard],
+    canActivateChild: [DemoGuard],
     children: [
       { path: '', redirectTo: 'view/:id', pathMatch: 'full' },
       { path: 'view/:id', component: DemoViewComponent },
@@ -30,12 +29,12 @@ const appRoutes: Routes = [
     ]
   },
   {
-    path: 'demo-from-custom-module',
+    path: 'demo-from-lazy-module',
     loadChildren: './modules/demo/demo.module#DemoModule', // Lazy load
   },
   {
     path: '',
-    redirectTo: '/demo',
+    redirectTo: '/demo-list',
     pathMatch: 'full'
   },
   {

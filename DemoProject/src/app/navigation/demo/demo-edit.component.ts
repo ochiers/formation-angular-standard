@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
-import { Demo } from './demo';
+import { Demo } from './../demo';
 
 @Component({
   template: `
@@ -62,6 +62,6 @@ export class DemoEditComponent {
 
   save() {
     this.isFormSaved = true;
-    this.router.navigate(['demo'], { queryParams: { id: this.demo.id } });
+    this.router.navigate(['demo-list'], { queryParams: { id: this.demo.id } });
   }
 }
