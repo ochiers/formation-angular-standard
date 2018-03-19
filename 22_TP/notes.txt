@@ -1,0 +1,9 @@
+Formation 
+
+
+ECMAScript
+
+
+let prenom = 'Sebastien'
+let afficher = `Bonjour ${prenom}` => Interprétation de la variable
+
