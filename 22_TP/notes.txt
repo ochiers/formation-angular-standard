@@ -7,3 +7,15 @@ ECMAScript
 let prenom = 'Sebastien'
 let afficher = `Bonjour ${prenom}` => Interprétation de la variable
 
+Babel transpileur => JS
+
+
+TS (= Microsoft) != ES6
+
+
+VSCode
+
+//#region nomRegion
+
+
+//#endregion
